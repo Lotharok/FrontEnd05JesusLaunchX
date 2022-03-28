@@ -7,16 +7,16 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="/orders">
+            <router-link to="/orders" class="nav-link">
               <span data-feather="file"></span>
               Ordenes
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin">
-              <span data-feather="shopping-cart"></span>
+            <router-link to="/admin" class="nav-link">
+              <span data-feather="file"></span>
               Productos
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -36,7 +36,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in orders" :key="item.id">
+            <tr v-for="item in $store.state.orders" :key="item.id">
               <td>{{ item.id }}</td>
               <td>{{ item.name }}</td>
               <td>{{ item.phone }}</td>
@@ -54,32 +54,5 @@
 export default {
   name: "OrdersView",
   components: {},
-  data() {
-    return {
-      orders: [
-        {
-          id: 1,
-          name: "Juan Perez",
-          phone: "9931458745",
-          detail: "Pastel de chocolate",
-          mail: "juan.perez@gmail.com",
-        },
-        {
-          id: 2,
-          name: "Samuel Lopez",
-          phone: "6654785441",
-          detail: "Vela de 7 años.",
-          mail: "samuel.lopez@gmail.com",
-        },
-        {
-          id: 3,
-          name: "Laura Martinez",
-          phone: "5568745844",
-          detail: "Pastel napolitano",
-          mail: "laura.martinez@gmail.com",
-        },
-      ],
-    };
-  },
 };
 </script>

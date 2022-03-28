@@ -4,9 +4,9 @@
     <p class="lead">Estamos procesando tu orden.</p>
     <hr />
     <p class="lead">
-      <a class="btn btn-primary btn-sm" href="/home" role="button"
-        >Regresar a la pagina principal</a
-      >
+      <router-link to="/home" class="btn btn-primary btn-sm" role="button">
+        Regresar a la pagina principal
+      </router-link>
     </p>
   </div>
 </template>
@@ -15,8 +15,5 @@
 export default {
   name: "ThankView",
   components: {},
-  data() {
-    return {};
-  },
 };
 </script>

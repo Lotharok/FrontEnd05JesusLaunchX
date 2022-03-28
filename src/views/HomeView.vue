@@ -122,7 +122,7 @@ export default {
           description: "",
           button: "Ordenala",
         },
-      ]
+      ],
     };
   },
 };

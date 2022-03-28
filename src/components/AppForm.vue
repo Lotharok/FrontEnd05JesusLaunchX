@@ -7,7 +7,7 @@
         class="form-control"
         id="name"
         placeholder=""
-        value=""
+        v-model="order.name"
         required
       />
       <div class="invalid-feedback">Obligatorio.</div>
@@ -19,6 +19,7 @@
         type="email"
         class="form-control"
         id="email"
+        v-model="order.mail"
         placeholder="you@example.com"
       />
       <div class="invalid-feedback">Coloca un correo valido.</div>
@@ -32,6 +33,7 @@
         class="form-control"
         id="phone"
         placeholder=""
+        v-model="order.phone"
         required
       />
       <div class="invalid-feedback">Obligatorio.</div>
@@ -41,12 +43,23 @@
   <div class="row justify-content-md-center">
     <div class="col-sm-6">
       <label for="description" class="form-label">Descripcion del pastel</label>
-      <textarea class="form-control" id="description" rows="3"></textarea>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="3"
+        v-model="order.detail"
+      ></textarea>
     </div>
   </div>
   <div class="row justify-content-md-center">
     <div class="col-sm-6">
-      <button type="submit" class="btn btn-primary">Primary</button>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        @click.stop.prevent="submit()"
+      >
+        Pedir
+      </button>
     </div>
   </div>
 </template>
@@ -55,5 +68,23 @@
 export default {
   name: "AppForm",
   props: {},
+  data() {
+    return {
+      order: {
+        id: 0,
+        name: "",
+        phone: "",
+        detail: "",
+        mail: "",
+      },
+    };
+  },
+  methods: {
+    submit() {
+      this.order.id = this.$store.state.lastId + 1;
+      this.$store.dispatch("createOrder", this.order);
+      this.$router.push("/thank");
+    },
+  },
 };
 </script>

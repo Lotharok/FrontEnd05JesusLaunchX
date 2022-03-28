@@ -1,6 +1,6 @@
 <template>
   <div class="row"></div>
-  <form action="/thank">
+  <form>
     <AppFlavor />
     <AppOrnament />
     <AppForm />
@@ -18,9 +18,6 @@ export default {
     AppForm,
     AppFlavor,
     AppOrnament,
-  },
-  data() {
-    return {};
   },
 };
 </script>

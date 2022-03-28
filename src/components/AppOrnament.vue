@@ -4,7 +4,7 @@
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-    <div class="col" v-for="item of ornaments" :key="item.name">
+    <div class="col" v-for="item of $store.state.ornaments" :key="item.name">
       <div class="card mb-4 rounded-3 shadow-sm">
         <div class="card-header py-3">
           <input
@@ -31,29 +31,5 @@
 export default {
   name: "AppOrnament",
   props: {},
-  data() {
-    return {
-      ornaments: [
-        {
-          img: "https://st.depositphotos.com/1020804/2157/i/600/depositphotos_21579613-stock-photo-strawberries-with-leaves.jpg",
-          name: "Fresas",
-          description: "",
-          price: 10,
-        },
-        {
-          img: "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00068063613650L.jpg",
-          name: "Vela",
-          description: "",
-          price: 5,
-        },
-        {
-          img: "https://us.123rf.com/450wm/viktarmalyshchyts/viktarmalyshchyts1112/viktarmalyshchyts111200072/11701896-duraznos.jpg?ver=6",
-          name: "Duraznos",
-          description: "",
-          price: 15,
-        },
-      ],
-    };
-  },
 };
 </script>
